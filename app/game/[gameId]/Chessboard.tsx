@@ -115,7 +115,6 @@ export default function GameBoard() {
   return (
     <>
       <Chessboard
-        id="ClickToMove"
         animationDuration={200}
         arePiecesDraggable={false}
         position={game.fen()}
