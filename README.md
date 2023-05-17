@@ -19,3 +19,12 @@ npm install
 ```
 npm run dev
 ```
+
+## Contributing
+
+- Clone the repository
+- Create a new branch
+- Publish branch and create a pull request
+- Merge pull request to `main`
+
+Please do not directly push to `main`
