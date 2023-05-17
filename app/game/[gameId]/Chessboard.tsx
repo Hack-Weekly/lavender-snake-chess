@@ -47,7 +47,7 @@ export default function GameBoard() {
       return move;
     });
     newSquares[square] = {
-      background: "rgba(255, 255, 0, 0.4)",
+      background: "rgba(0, 127, 255, 0.4)",
     };
     setOptionSquares(newSquares);
     return true;
@@ -121,14 +121,15 @@ export default function GameBoard() {
         onSquareClick={onSquareClick}
         onSquareRightClick={onSquareRightClick}
         customBoardStyle={{
-          borderRadius: "4px",
-          boxShadow: "0 2px 10px rgba(0, 0, 0, 0.5)",
+          borderRadius: "0.25rem",
         }}
         customSquareStyles={{
           ...moveSquares,
           ...optionSquares,
           ...rightClickedSquares,
         }}
+        customDarkSquareStyle={{ backgroundColor: "#6667AB" }}
+        customLightSquareStyle={{ backgroundColor: "#E6E6FA" }}
       />
       <button
         onClick={() => {
