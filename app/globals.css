@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  main {
+    @apply flex-auto;
+  }
+}
+
 @layer utilities {
   .aspect-1 {
     aspect-ratio: 1;
+  }
+  .min-h-dscreen {
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 }
