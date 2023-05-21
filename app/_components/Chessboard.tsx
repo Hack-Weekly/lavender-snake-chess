@@ -1,11 +1,13 @@
 "use client";
 
 import { Chess, ChessInstance } from "chess.js";
-import { useState } from "react";
-import { Chessboard } from "react-chessboard";
+import Image from "next/image";
+import { useRef, useState, useEffect } from "react";
+import { Chessboard, ClearPremoves } from "react-chessboard";
 import { Square } from "react-chessboard/dist/chessboard/types";
 
 export default function GameBoard() {
+  const isChessboardMounted = useRef(false);
   const [game, setGame] = useState(new Chess());
   const [moveFrom, setMoveFrom] = useState<Square>();
   const [rightClickedSquares, setRightClickedSquares] = useState<{
@@ -111,10 +113,10 @@ export default function GameBoard() {
           : { backgroundColor: colour },
     });
   }
-
   return (
     <>
       <Chessboard
+        id="board"
         animationDuration={200}
         arePiecesDraggable={false}
         position={game.fen()}

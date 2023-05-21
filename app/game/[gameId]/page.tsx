@@ -1,13 +1,23 @@
-import Chessboard from "./Chessboard";
+import Chessboard from "@/app/_components/Chessboard";
+import { Metadata } from "next";
 
-export default function GamePage() {
+type Props = {
+  params: { gameId: string };
+};
+
+export function generateMetadata({ params }: Props): Metadata {
+  const id = params.gameId;
+  return {
+    title: `Match ${id} | Chessss`,
+  };
+}
+
+export default function GamePage({ params }: Props) {
   return (
-    <div className="flex min-h-screen w-full">
-      <div className="relative h-screen w-full">
-        <div className="absolute max-w-md inset-[0] m-auto aspect-1">
-          <Chessboard />
-        </div>
+    <main className="relative">
+      <div className="absolute portrait:w-[90vmin] landscape:w-[60vmin] inset-[0] m-auto aspect-1">
+        <Chessboard />
       </div>
-    </div>
+    </main>
   );
 }
