@@ -5,7 +5,7 @@ import Header from "@/app/_components/Header";
 import Footer from "@/app/_components/Footer";
 import { NextAuthProvider } from "@/app/_context/NextAuthProvider";
 
-const font = Montserrat({ subsets: ["latin"] });
+const font = Montserrat({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Chessss",
