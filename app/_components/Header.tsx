@@ -1,5 +1,5 @@
 "use client";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,7 +25,19 @@ export default function Header() {
               height={32}
             />
           </Link>
-        ) : null}
+        ) : (
+          <button
+            onClick={() => signIn("discord")}
+            className="flex flex-nowrap items-center gap-1.5">
+            <Image
+              src="/discord.svg"
+              alt="Discord Sign In"
+              width={16}
+              height={16}
+            />
+            Sign in
+          </button>
+        )}
       </nav>
     </header>
   );
