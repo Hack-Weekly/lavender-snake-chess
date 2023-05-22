@@ -6,7 +6,9 @@ export default function Header() {
     <header className="flex-none flex justify-between items-center px-4 pt-4">
       <Link href="/" className="flex gap-2 justify-center items-center">
         <Image src="/chess.svg" alt="Chessss Logo" width={48} height={48} />
-        <h1>Chessss</h1>
+        <h1 className="font-black hidden md:inline tracking-tighter">
+          Chessss
+        </h1>
       </Link>
       <nav className="flex gap-4">
         <Link href="/">Home</Link>
