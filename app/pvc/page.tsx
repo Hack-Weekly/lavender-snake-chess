@@ -1,0 +1,16 @@
+import Chessboard from "@/app/_components/Chessboard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Versus Computer | Chessss",
+};
+
+export default function GamePage() {
+  return (
+    <main className="relative">
+      <div className="absolute portrait:w-[90vmin] landscape:w-[60vmin] inset-[0] m-auto aspect-1">
+        <Chessboard />
+      </div>
+    </main>
+  );
+}
