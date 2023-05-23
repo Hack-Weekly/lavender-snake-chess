@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 
 export default function Header() {
-  const { data } = useSession();
+  const { data, status } = useSession();
   return (
     <header className="flex-none flex justify-between items-center px-4 pt-4">
       <Link href="/" className="flex gap-2 justify-center items-center">
@@ -17,7 +17,7 @@ export default function Header() {
       </Link>
       <nav className="flex gap-4 justify-center items-center">
         <Link href="/">Home</Link>
-        {data && data.user.image ? (
+        {status === "authenticated" && data.user.image ? (
           <Menu as="div" className="relative inline-block text-left">
             <div>
               <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-full bg-white text-sm font-semibold text-gray-900 shadow-sm hover:grayscale grayscale-0 transition duration-150">

@@ -13,8 +13,9 @@ export default function Loader({ text }: Props) {
         alt="Chessss Logo"
         width={64}
         height={64}
+        priority
       />
-      <p className="animate-pulse">Loading {text}...</p>
+      <p className="animate-pulse">{text}</p>
     </main>
   );
 }
