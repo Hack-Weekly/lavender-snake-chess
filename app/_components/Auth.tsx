@@ -12,13 +12,13 @@ export const Auth = ({ children }: Props) => {
     return (
       <main className="flex flex-col justify-center items-center">
         <Image
-          className="animate-pulse"
+          className="animate-bounce"
           src="/chess.svg"
           alt="Chessss Logo"
           width={64}
           height={64}
         />
-        <p>Loading Chessss...</p>
+        <p className="animate-pulse">Loading Chessss...</p>
       </main>
     );
   }
