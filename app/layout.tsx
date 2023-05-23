@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
-import Header from "@/app/_components/Header";
-import Footer from "@/app/_components/Footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import NextAuthProvider from "@/context/NextAuthProvider";
 
-const font = Montserrat({ subsets: ["latin"] });
+const font = Montserrat({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Chessss",
@@ -20,9 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={font.className + " " + "flex flex-col min-h-dscreen gap-4"}>
-        <Header />
-        {children}
-        <Footer />
+        <NextAuthProvider>
+          <Header />
+          {children}
+          <Footer />
+        </NextAuthProvider>
       </body>
     </html>
   );

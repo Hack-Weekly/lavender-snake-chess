@@ -1,14 +1,7 @@
-import { type GetServerSidePropsContext } from "next";
-import {
-  getServerSession,
-  type NextAuthOptions,
-  type DefaultSession,
-} from "next-auth";
+import { type NextAuthOptions, type DefaultSession } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 import { DetaAdapter } from "next-auth-deta";
 import { Deta } from "deta";
-
-const deta = Deta(process.env.DETA_COLLECTION_KEY);
 
 declare module "next-auth" {
   interface Session extends DefaultSession {
@@ -26,7 +19,7 @@ declare module "next-auth" {
 }
 
 export const authOptions: NextAuthOptions = {
-  adapter: DetaAdapter(deta),
+  adapter: DetaAdapter(Deta(process.env.DETA_COLLECTION_KEY)),
   callbacks: {
     session: ({ session, user }) => ({
       ...session,
@@ -46,11 +39,4 @@ export const authOptions: NextAuthOptions = {
         : "",
     }),
   ],
-};
-
-export const getServerAuthSession = (ctx: {
-  req: GetServerSidePropsContext["req"];
-  res: GetServerSidePropsContext["res"];
-}) => {
-  return getServerSession(ctx.req, ctx.res, authOptions);
 };
