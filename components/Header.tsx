@@ -17,13 +17,18 @@ export default function Header() {
         <Link href="/">Home</Link>
         {/* TODO: Handle auth */}
         {data && data.user.image ? (
-          <Link href="/profile">
+          <Link
+            href="/profile"
+            className="flex flex-nowrap items-center gap-1.5">
             <Image
               src={data.user.image}
               alt="Profile Picture"
-              width={32}
-              height={32}
+              width={16}
+              height={16}
             />
+            <span className="max-w-[7ch] overflow-hidden text-ellipsis">
+              {data.user.name ? data.user.name : "You"}
+            </span>
           </Link>
         ) : (
           <button
@@ -34,8 +39,9 @@ export default function Header() {
               alt="Discord Sign In"
               width={16}
               height={16}
+              priority
             />
-            Sign in
+            <span>Sign in</span>
           </button>
         )}
       </nav>

@@ -1,4 +1,4 @@
-import Chessboard from "@/app/_components/Chessboard";
+import Chessboard from "@/components/Chessboard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

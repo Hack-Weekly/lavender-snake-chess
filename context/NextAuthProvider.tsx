@@ -2,7 +2,7 @@
 
 import { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
-import { Auth } from "@/app/_components/Auth";
+import { Auth } from "@/components/Auth";
 
 type Props = {
   children?: React.ReactNode;
