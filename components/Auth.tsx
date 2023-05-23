@@ -9,7 +9,7 @@ export default function Auth({ children }: Props) {
   const { status } = useSession();
 
   if (status === "loading") {
-    <Loader text="Chessss" />;
+    return <Loader text="Loading Chessss..." />;
   }
 
   return <>{children}</>;
