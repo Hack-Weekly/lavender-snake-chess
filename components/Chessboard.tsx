@@ -1,13 +1,11 @@
 "use client";
 
 import { Chess, ChessInstance } from "chess.js";
-import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
-import { Chessboard, ClearPremoves } from "react-chessboard";
+import { useState } from "react";
+import { Chessboard } from "react-chessboard";
 import { Square } from "react-chessboard/dist/chessboard/types";
 
 export default function GameBoard() {
-  const isChessboardMounted = useRef(false);
   const [game, setGame] = useState(new Chess());
   const [moveFrom, setMoveFrom] = useState<Square>();
   const [rightClickedSquares, setRightClickedSquares] = useState<{
